@@ -27,6 +27,20 @@ namespace StackandQueue
             }
             Console.WriteLine("{0} is inserted into Queue", node.data);
         }
+        public void Dequeue()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Queue is Empty.So Deletion is not Possible");
+                return;
+            }
+            else
+            {
+                this.head = this.head.next;
+                Console.WriteLine("Removed the element from queue");
+                Dequeue();
+            }
+        }
         public void Display()
         {
             Node temp = this.head;
